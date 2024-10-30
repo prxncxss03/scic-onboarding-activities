@@ -1,2 +1,4 @@
-**/.DS_Store
-.DS_Store
+.DS_Store/
+
+# Ignore the node_modules directory
+node_modules/
