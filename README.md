@@ -1,1 +1,1 @@
-# scic-onboarding-capstone
+# scic-onboarding-activity
