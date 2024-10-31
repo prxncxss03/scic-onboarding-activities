@@ -10,7 +10,8 @@
 - Send Contact Form: Users can submit inquiries or feedback through a contact form.
 
 ### Demo
-https://github.com/user-attachments/assets/fb22ffd3-213a-4b89-bf94-129de42e9e0d
+https://github.com/user-attachments/assets/c73e040f-5483-4d19-bf7a-fde485096f50
+
 
 <img width="312" alt="Screenshot 2024-10-31 at 18 37 38" src="https://github.com/user-attachments/assets/ad226957-6ec6-4c4d-a546-7599eb63af38">
 
