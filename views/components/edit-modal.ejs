@@ -1,0 +1,40 @@
+<div class="modal" id="editModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Edit Blog Post <%= post.id %></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="/blog/<%= post.id %>?_method=PUT" enctype="multipart/form-data" class="container" method="post">
+          <input name="_method" type="hidden" value="put">
+          <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" 
+            value="<%= post.title %>"
+            name="title" class="form-control" placeholder="Enter Title">
+          </div>
+          <div class="mb-3">
+            <label for="image" class="form-label">Attach Image</label>
+            <input 
+            class="form-control" name="image" type="file">
+          </div>
+          <div class="mb-3">
+            <label for="content" class="form-label">Content</label>
+            <p class="small
+            text-muted 
+            ">
+              Use "\n" to divide the paragraph
+            </p>
+            <textarea 
+            class="form-control" name="content" rows="10"><%= post.content %></textarea>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-success">Save Changes</button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+#custom-max-width {
+  max-width: 40rem; 
+  text-align: justify;
+}
+
+#custom-max-width-2 {
+  max-width: 45rem; 
+  width: 100%;
+}
