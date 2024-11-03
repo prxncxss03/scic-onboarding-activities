@@ -1,0 +1,87 @@
+<div class="modal" id="editModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Edit Book Note <%= book.Id %></h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form
+          action="/book/<%= book.Id %>?_method=PUT"
+          class="container"
+          method="post"
+        >
+          <input name="_method" type="hidden" value="put" />
+          <input type="hidden" name="originalIsbn" value="<%= book.Isbn %>" />
+          <input type="hidden" name="date" value="<%= book.Date %>" />
+          <input type="hidden" name="imageUrl" value="<%= book.Image_Url %>" />
+          <div class="mb-3">
+            <label for="isbn" class="form-label">ISBN-13</label>
+            <input
+              type="number"
+              minlength="13"
+              maxlength="13"
+              value="<%= book.Isbn %>"
+              name="isbn"
+              class="form-control"
+              placeholder="Enter ISBN-13 format"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input
+              type="text"
+              value="<%= book.Title %>"
+              name="title"
+              class="form-control"
+              placeholder="Enter Title"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="author" class="form-label">Author</label>
+            <input
+              type="text"
+              value="<%= book.Author %>"
+              name="author"
+              class="form-control"
+              placeholder="Enter Title"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="comment" class="form-label">Comment</label>
+            <textarea class="form-control" name="comment" rows="6">
+<%= book.Comment %></textarea
+            >
+          </div>
+          <div class="mb-3">
+            <label for="rating" class="form-label">Rating</label>
+            <input
+              type="number"
+              value="<%= book.Rating %>"
+              min="1"
+              max="5"
+              name="rating"
+              class="form-control"
+              placeholder="Enter Rating"
+            />
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="submit" class="btn btn-success">Save Changes</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
