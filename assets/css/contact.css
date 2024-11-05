@@ -1,12 +1,12 @@
-@import url('/assets/fonts/sofia-pro-webfont/style.css');
+@import url("/assets/fonts/sofia-pro-webfont/style.css");
 
 h1 {
-  background: linear-gradient(to right, #fc5c7d,  #ffc3a0, #F2D2BD);
+  background: linear-gradient(to right, #fc5c7d, #ffc3a0, #f2d2bd);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.contact-form{
+.contact-form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -18,3 +18,8 @@ h1 {
   gap: 0.5rem;
 }
 
+@media only screen and (max-width: 599px) {
+  #general-body-container {
+    height: 100vh;
+  }
+}

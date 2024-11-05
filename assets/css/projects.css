@@ -1,7 +1,7 @@
-@import url('/assets/fonts/sofia-pro-webfont/style.css');
+@import url("/assets/fonts/sofia-pro-webfont/style.css");
 
 h1 {
-  background: linear-gradient(to right,#5b60d2,#E0B0FF, #E0B0FF);
+  background: linear-gradient(to right, #5b60d2, #e0b0ff, #e0b0ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -31,3 +31,16 @@ h1 {
   grid-template-columns: repeat(auto-fill, minmax(29rem, 1fr));
 }
 
+@media only screen and (max-width: 600px) {
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+
+  .featured-proj-container {
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  }
+}

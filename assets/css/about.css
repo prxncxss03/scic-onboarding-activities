@@ -31,3 +31,54 @@ h1 {
 .about-paragraph {
   line-height: 1.5;
 }
+
+/* mobile responsive */
+@media (max-width: 900px) {
+  .about-container div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 2rem;
+  }
+
+  .image-1{
+    max-width: 25rem;
+  }
+  
+  .about-main-content-container {
+    flex-direction: column;
+  }
+}
+
+/* mobile responsive */
+@media (min-width: 375px) {
+  .about-container {
+    padding: 0;
+  }
+  .about-container div {
+    padding: 0;
+  }
+
+  .about-main-content-container {
+    padding: 0;
+  }
+}
+
+
+@media only screen and (max-width: 599px) {
+  .about-container div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 0.35rem;
+  }
+
+  .image-1{
+    max-width: 25rem;
+  }
+  
+  .about-main-content-container {
+    flex-direction: column;
+  }
+}
+

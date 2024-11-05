@@ -1,4 +1,4 @@
-@import url('/assets/fonts/sofia-pro-webfont/style.css');
+@import url("/assets/fonts/sofia-pro-webfont/style.css");
 
 :root {
   --primary-color: #08070b;
@@ -15,7 +15,7 @@ html {
 
 body {
   background-color: var(--primary-color);
-  font-family: 'Sofia Pro Regular', sans-serif;
+  font-family: "Sofia Pro Regular", sans-serif;
   color: var(--secondary-color);
 }
 
@@ -32,8 +32,13 @@ a:hover {
   color: var(--secondary-color);
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Sofia Pro Bold', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Sofia Pro Bold", sans-serif;
 }
 
 img {
@@ -47,15 +52,15 @@ img {
 }
 
 .text-color-0 {
-  color: var(--secondary-color)
+  color: var(--secondary-color);
 }
 
 .text-light {
-  font-family: 'Sofia Pro Light', sans-serif;
+  font-family: "Sofia Pro Light", sans-serif;
 }
 
 .text-semibold {
-  font-family: 'Sofia Pro SemiBold', sans-serif;
+  font-family: "Sofia Pro SemiBold", sans-serif;
 }
 
 .line-height-0 {
@@ -73,7 +78,7 @@ img {
   height: 100%;
 }
 
-.vertical-separator{
+.vertical-separator {
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -92,7 +97,7 @@ input {
   background-color: var(--accent-color-2);
   border: 1px solid var(--accent-color-1);
   color: var(--secondary-color);
-  font-family: 'Sofia Pro Light', sans-serif;
+  font-family: "Sofia Pro Light", sans-serif;
 }
 
 textarea {
@@ -101,7 +106,7 @@ textarea {
   color: var(--secondary-color);
   background-color: var(--accent-color-2);
   border: 1px solid var(--accent-color-1);
-  font-family: 'Sofia Pro Light', sans-serif;
+  font-family: "Sofia Pro Light", sans-serif;
 }
 
 button {
@@ -111,13 +116,13 @@ button {
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  font-family: "Sofia Pro SemiBold", sans-serif;
 }
 
 button:hover {
   background-color: var(--accent-color-1);
   color: var(--secondary-color);
 }
-
 
 /* header */
 nav {
@@ -156,7 +161,7 @@ nav {
 .logo-text {
   font-size: 1.5rem;
   text-decoration: none;
-  font-family: 'Sofia Pro Black', sans-serif;
+  font-family: "Sofia Pro Black", sans-serif;
   color: var(--secondary-color);
   padding: 0.5rem 0.75rem 0.3rem 0.75rem;
 }
@@ -237,12 +242,11 @@ nav {
   color: var(--secondary-color);
 }
 
-
 /* Close Button */
 .fullscreen-menu .close-btn a {
   position: absolute;
-  top: 1rem;
-  right: 2rem;
+  top: 0.5rem;
+  right: 1rem;
   font-size: 2rem;
   color: var(--accent-color-1);
   text-decoration: none;
@@ -253,8 +257,22 @@ nav {
   color: var(--secondary-color);
 }
 
-/* Media Queries */
+@media only screen and (max-width: 599px) {
+  .hero-name {
+    font-size: 1.5rem !important;
+    text-align: center;
+  }
+
+  #general-body-container {
+    height: auto;
+  }
+}
+
 @media (max-width: 768px) {
+  nav {
+    padding: 0.35rem;
+  }
+
   .navigation-links-container {
     display: none;
   }
@@ -263,7 +281,7 @@ nav {
     display: flex;
   }
 
-  .linkedin-logo{
+  .linkedin-logo {
     display: none;
   }
 }
@@ -273,7 +291,6 @@ nav {
     display: none;
   }
 }
-
 
 /* main */
 .main-container {
@@ -288,6 +305,7 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100%;
 }
 
 .hero-name {
@@ -298,7 +316,6 @@ nav {
 #general-container {
   max-width: 55rem;
 }
-
 
 /* footer */
 footer {
