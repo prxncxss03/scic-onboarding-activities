@@ -125,7 +125,9 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 2rem;
+  position: relative;
 }
+
 .navigation-links-container {
   display: flex;
   align-items: center;
@@ -165,7 +167,7 @@ nav {
   background-color: var(--accent-color-2);
 }
 
-.linkedin-logo{
+.linkedin-logo {
   padding: 0.25rem 0.5rem 0 0.5rem;
   border-radius: 5px;
 }
@@ -175,6 +177,103 @@ nav {
   border-radius: 5px;
   background-color: var(--accent-color-2);
 }
+
+/* Hamburger Menu */
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.hamburger-menu .bar {
+  width: 30px;
+  height: 3px;
+  background-color: var(--secondary-color);
+  border-radius: 1px;
+}
+
+/* Full-Screen Menu */
+.fullscreen-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--primary-color);
+  color: var(--accent-color-1);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 9999;
+  text-align: center;
+  padding-top: 2rem;
+}
+
+.fullscreen-menu:target {
+  display: flex;
+}
+
+.fullscreen-menu .fullscreen-links {
+  list-style: none;
+  padding: 0;
+}
+
+.fullscreen-menu .fullscreen-links li {
+  margin: 1.5rem 0;
+}
+
+.fullscreen-menu .fullscreen-links a {
+  color: var(--accent-color-1);
+  font-size: 1.5rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.fullscreen-menu .fullscreen-links a:hover {
+  color: var(--secondary-color);
+}
+
+
+/* Close Button */
+.fullscreen-menu .close-btn a {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  font-size: 2rem;
+  color: var(--accent-color-1);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.fullscreen-menu .close-btn a:hover {
+  color: var(--secondary-color);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .navigation-links-container {
+    display: none;
+  }
+
+  .hamburger-menu {
+    display: flex;
+  }
+
+  .linkedin-logo{
+    display: none;
+  }
+}
+
+@media (min-width: 769px) {
+  .hamburger-menu {
+    display: none;
+  }
+}
+
 
 /* main */
 .main-container {
