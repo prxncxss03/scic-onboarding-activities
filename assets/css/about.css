@@ -1,0 +1,33 @@
+@import url('/assets/fonts/sofia-pro-webfont/style.css');
+
+h1 {
+  background: linear-gradient(to right, #fffc00,  #ffffff); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.image-1 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 55rem;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  align-self: center;
+  transition: all 0.5s ease-in-out;
+}
+
+.about-main-content-container{
+  display: flex;
+  gap: 2rem;
+}
+
+.about-paragraph {
+  line-height: 1.5;
+}

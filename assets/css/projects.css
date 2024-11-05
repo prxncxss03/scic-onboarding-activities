@@ -1,0 +1,33 @@
+@import url('/assets/fonts/sofia-pro-webfont/style.css');
+
+h1 {
+  background: linear-gradient(to right,#5b60d2,#E0B0FF, #E0B0FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.project-icon {
+  width: 1.2rem;
+}
+
+.project-box-container {
+  display: block;
+  border: 1px solid var(--accent-color-1);
+  border-radius: 8px;
+}
+
+.project-box-container:hover {
+  border-radius: 8px;
+}
+
+.project-header {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.featured-proj-container {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(29rem, 1fr));
+}
+

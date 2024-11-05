@@ -1,0 +1,217 @@
+@import url('/assets/fonts/sofia-pro-webfont/style.css');
+
+:root {
+  --primary-color: #08070b;
+  --secondary-color: #fff;
+  --accent-color-1: #8f9ba8;
+  --accent-color-2: #212024;
+}
+
+html {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: var(--primary-color);
+  font-family: 'Sofia Pro Regular', sans-serif;
+  color: var(--secondary-color);
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0.75rem 1rem 0.5rem 1rem;
+  color: var(--accent-color-1);
+}
+
+a:hover {
+  padding: 0.75rem 1rem 0.5rem 1rem;
+  border-radius: 5px;
+  color: var(--secondary-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Sofia Pro Bold', sans-serif;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.text-color-1 {
+  color: var(--accent-color-1);
+}
+
+.text-color-0 {
+  color: var(--secondary-color)
+}
+
+.text-light {
+  font-family: 'Sofia Pro Light', sans-serif;
+}
+
+.text-semibold {
+  font-family: 'Sofia Pro SemiBold', sans-serif;
+}
+
+.line-height-0 {
+  line-height: 0;
+}
+
+#link-active {
+  color: var(--secondary-color);
+}
+
+.general-container-1 {
+  max-width: 55rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+  height: 100%;
+}
+
+.vertical-separator{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+#general-body-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+input {
+  padding: 0.75rem;
+  border-radius: 8px;
+  background-color: var(--accent-color-2);
+  border: 1px solid var(--accent-color-1);
+  color: var(--secondary-color);
+  font-family: 'Sofia Pro Light', sans-serif;
+}
+
+textarea {
+  padding: 0.75rem;
+  border-radius: 8px;
+  color: var(--secondary-color);
+  background-color: var(--accent-color-2);
+  border: 1px solid var(--accent-color-1);
+  font-family: 'Sofia Pro Light', sans-serif;
+}
+
+button {
+  padding: 0.75rem 1rem;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--accent-color-1);
+  color: var(--secondary-color);
+}
+
+
+/* header */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2rem;
+}
+.navigation-links-container {
+  display: flex;
+  align-items: center;
+}
+
+.navigation-links-container li {
+  list-style-type: none;
+  text-transform: uppercase;
+}
+
+.navigation-links-container a {
+  text-decoration: none;
+  cursor: pointer;
+  padding: 1rem 1.75rem;
+  color: var(--accent-color-1);
+}
+
+.navigation-links-container a:hover {
+  background-color: var(--accent-color-2);
+  border-radius: 5px;
+  color: var(--secondary-color);
+  padding: 0.75rem 1rem 0.6rem 1rem;
+  margin: 0.75rem;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  text-decoration: none;
+  font-family: 'Sofia Pro Black', sans-serif;
+  color: var(--secondary-color);
+  padding: 0.5rem 0.75rem 0.3rem 0.75rem;
+}
+
+.logo-text:hover {
+  padding: 0.5rem 0.75rem 0.3rem 0.75rem;
+  border-radius: 5px;
+  background-color: var(--accent-color-2);
+}
+
+.linkedin-logo{
+  padding: 0.25rem 0.5rem 0 0.5rem;
+  border-radius: 5px;
+}
+
+.linkedin-logo:hover {
+  padding: 0.25rem 0.5rem 0 0.5rem;
+  border-radius: 5px;
+  background-color: var(--accent-color-2);
+}
+
+/* main */
+.main-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-name {
+  font-size: 3.2rem;
+  margin: 2rem 0;
+}
+
+#general-container {
+  max-width: 55rem;
+}
+
+
+/* footer */
+footer {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.social-links-container {
+  list-style: none;
+}
+
+.social-links-container a {
+  text-decoration: none;
+  margin-right: 10px;
+}
