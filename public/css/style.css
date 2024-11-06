@@ -7,3 +7,18 @@
   max-width: 45rem; 
   width: 100%;
 }
+
+#error-message {
+  display: none;
+}
+
+#edit-error-message {
+  display: none;
+}
+
+.cover-image {
+  object-fit: cover;
+  aspect-ratio: 16 / 9; 
+}
+
+

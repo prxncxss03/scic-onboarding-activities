@@ -3,14 +3,27 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Are you sure you want to delete?</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
       </div>
       <div class="modal-body">
         <p>Once you delete this blog, it cannot be undone.</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-danger" onclick="deleteBlog('<%= post.id %>')">Delete</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button
+          type="button"
+          class="btn btn-danger"
+          onclick="deleteBlog('<%= post.id %>')"
+        >
+          Delete
+        </button>
       </div>
     </div>
   </div>

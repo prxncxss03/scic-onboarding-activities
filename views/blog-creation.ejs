@@ -14,15 +14,20 @@
   </head>
   <body>
     <%- include('components/nav'); %>
-    <div class="d-flex w-100 justify-content-center">
+    <div
+      class="d-flex flex-column w-100 justify-content-center align-items-center p-4"
+    >
       <form
         id="custom-max-width-2"
-        class="m-3"
+        class="mb-3"
         action="/blog-create"
         enctype="multipart/form-data"
         class="container"
         method="post"
       >
+        <div class="alert alert-danger w-100" id="error-message" role="alert">
+          <p>Only images are allowed to upload (jpg, jpeg, png, gif).</p>
+        </div>
         <div class="mb-3">
           <label for="title" class="form-label">Title</label>
           <input
@@ -58,5 +63,6 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script src="/js/index.js"></script>
   </body>
 </html>

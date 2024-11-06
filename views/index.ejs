@@ -10,6 +10,7 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
     <div class="d-flex flex-column justify-content-between vh-100">
@@ -18,16 +19,26 @@
         <div class="container justify-self-start p-4">
           <div>
             <div
-              class="d-flex justify-content-between align-items-center h-100"
+              class="d-flex flex-column flex-lg-row justify-content-between align-items-center h-100 my-lg-2"
             >
-              <h1>
+              <h1 class="order-1 order-lg-0 mt-4 mt-lg-0">
                 Welcome to my
                 <span class="text-primary">Blog</span>
               </h1>
-              <a type="button" class="btn btn-primary" href="/blog-creation"
+              <a
+                type="button"
+                class="btn btn-primary w-100 d-lg-none"
+                href="/blog-creation"
+                >Create a Blog</a
+              >
+              <a
+                type="button"
+                class="btn btn-primary d-none d-lg-flex"
+                href="/blog-creation"
                 >Create a Blog</a
               >
             </div>
+
             <p>Here you can find all the latest blog posts</p>
             <div class="row">
               <% posts.forEach(post => { %>
@@ -35,7 +46,7 @@
                 <div class="card">
                   <img
                     src="<%= post.image_url %>"
-                    class="card-img-top"
+                    class="card-img-top cover-image"
                     alt="<%= post.title %>"
                   />
                   <div class="card-body">
