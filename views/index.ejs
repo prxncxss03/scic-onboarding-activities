@@ -13,15 +13,13 @@
     <title>Book Notes</title>
   </head>
   <body id="main-background">
-    <div
-      class="d-flex flex-column justify-content-center align-items-center p-4 w-100"
-    >
+    <div class="d-flex flex-column align-items-center p-4 w-100 h-100">
       <h1 class="d-flex flex-column">
         Princess Pocon's
         <span class="display-2 fw-bold">Book Notes</span>
       </h1>
       <div id="main-content">
-        <div class="d-flex justify-content-between">
+        <div class="d-flex justify-content-between w-100">
           <div class="dropdown">
             <button
               class="btn btn-sm dropdown-toggle"
@@ -50,9 +48,7 @@
           <a type="button" class="btn btn-primary" href="/add-book">Add Book</a>
         </div>
 
-        <div
-          class="container p-0 d-flex justify-content-center flex-column align-items-center"
-        >
+        <div class="container p-0 d-flex flex-column align-items-center h-100">
           <% if (books && books.length > 0) { %> <% books.forEach(book => { %>
           <div class="col-md-12">
             <a
@@ -96,7 +92,11 @@
             </a>
           </div>
           <% }) %> <% } else { %>
-          <p>No books found</p>
+          <div
+            class="d-flex justify-content-center h-100 align-items-center my-2"
+          >
+            <h3 class="text-muted">No books found</h3>
+          </div>
           <% } %>
         </div>
       </div>

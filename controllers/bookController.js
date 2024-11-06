@@ -1,10 +1,10 @@
-const connection = require("../services/db");
+const pool = require("../services/db");
 
 async function getBooks(sortByValue = "date") {
   const sortBy = sortByValue === "date" ? "id" : sortByValue;
   const sortOrder = sortBy === "title" ? "ASC" : "DESC";
   return new Promise((resolve, reject) => {
-    connection.query(
+    pool.query(
       `SELECT * FROM books ORDER BY ${sortBy} ${sortOrder} `,
       (err, rows) => {
         if (err) {
@@ -19,23 +19,19 @@ async function getBooks(sortByValue = "date") {
 
 async function getBookByIsbn(isbn) {
   return new Promise((resolve, reject) => {
-    connection.query(
-      "SELECT * FROM books WHERE Isbn = ?",
-      [isbn],
-      (err, rows) => {
-        if (err) {
-          reject(err);
-        } else {
-          resolve(rows[0]);
-        }
+    pool.query("SELECT * FROM books WHERE Isbn = ?", [isbn], (err, rows) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(rows[0]);
       }
-    );
+    });
   });
 }
 
 async function getBookById(id) {
   return new Promise((resolve, reject) => {
-    connection.query("SELECT * FROM books WHERE id = ?", [id], (err, rows) => {
+    pool.query("SELECT * FROM books WHERE id = ?", [id], (err, rows) => {
       if (err) {
         reject(err);
       } else {
@@ -47,7 +43,7 @@ async function getBookById(id) {
 
 async function addBook(isbn, title, author, date, rating, comment, imageUrl) {
   return new Promise((resolve, reject) => {
-    connection.query(
+    pool.query(
       "INSERT INTO books (Isbn, Title, Author, Date, Rating, Comment, Image_Url) VALUES (?, ?, ?, ?, ?, ?, ?)",
       [isbn, title, author, date, rating, comment, imageUrl],
       (err) => {
@@ -77,7 +73,7 @@ async function updateBook(id, isbn, title, author, rating, comment, imageUrl) {
     query += " WHERE id = ?";
     params.push(id);
 
-    connection.query(query, params, (err) => {
+    pool.query(query, params, (err) => {
       if (err) {
         reject(err);
       } else {
@@ -89,7 +85,7 @@ async function updateBook(id, isbn, title, author, rating, comment, imageUrl) {
 
 async function deleteBook(id) {
   return new Promise((resolve, reject) => {
-    connection.query("DELETE FROM books WHERE id = (?)", [id], (err) => {
+    pool.query("DELETE FROM books WHERE id = (?)", [id], (err) => {
       if (err) {
         reject(err);
       } else {
