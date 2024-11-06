@@ -41,6 +41,10 @@
   gap: 20px; /* Space between cards */
 }
 
+#error-message {
+  display: none;
+}
+
 @media (min-width: 768px) {
   .book-note-container {
     width: 50%; /* Half width on larger screens */

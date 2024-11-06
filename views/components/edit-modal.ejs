@@ -1,4 +1,4 @@
-<div class="modal" id="editModal" tabindex="-1">
+<div class="modal" id="edit-modal" tabindex="-1">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -15,7 +15,10 @@
           action="/book/<%= book.Id %>?_method=PUT"
           class="container"
           method="post"
+          id="edit-form"
         >
+        <div class="alert alert-danger" id="error-message" role="alert">
+        </div>
           <input name="_method" type="hidden" value="put" />
           <input type="hidden" name="originalIsbn" value="<%= book.Isbn %>" />
           <input type="hidden" name="date" value="<%= book.Date %>" />
@@ -28,6 +31,7 @@
               maxlength="13"
               value="<%= book.Isbn %>"
               name="isbn"
+              id="isbn"
               class="form-control"
               placeholder="Enter ISBN-13 format"
             />
@@ -38,6 +42,7 @@
               type="text"
               value="<%= book.Title %>"
               name="title"
+              id="title"
               class="form-control"
               placeholder="Enter Title"
             />
@@ -48,13 +53,16 @@
               type="text"
               value="<%= book.Author %>"
               name="author"
+              id="author"
               class="form-control"
               placeholder="Enter Title"
             />
           </div>
           <div class="mb-3">
             <label for="comment" class="form-label">Comment</label>
-            <textarea class="form-control" name="comment" rows="6">
+            <textarea 
+            id="comment"
+            class="form-control" name="comment" rows="6">
 <%= book.Comment %></textarea
             >
           </div>
@@ -65,6 +73,7 @@
               value="<%= book.Rating %>"
               min="1"
               max="5"
+              id="rating"
               name="rating"
               class="form-control"
               placeholder="Enter Rating"

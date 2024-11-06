@@ -1,7 +1,7 @@
 const express = require("express");
 const axios = require("axios");
 const router = express.Router();
-
+const helper = require("../utils/helper");
 const bookController = require("../controllers/bookController");
 
 router.get("/", (req, res) => {
@@ -53,20 +53,38 @@ router.post("/book", async (req, res) => {
   const { isbn, title, author, rating, comment } = req.body;
   const date = new Date();
   const formattedDate = date.toISOString().slice(0, 10);
+
+  // check if book already exists on the database
+  const bookExists = await bookController.getBookByIsbn(isbn);
+  if (bookExists) {
+    return res.status(400).json({
+      message:
+        "Book already exists. Please add a new book or edit the existing one.",
+    });
+  }
+
   const bookCover = await fetchBookCover(isbn);
   try {
+    if (!bookCover) {
+      return res.status(400).json({
+        message: "Book not found. Please make sure your ISBN-13 is correct.",
+      });
+    }
+
     await bookController.addBook(
       isbn,
-      title.trim(),
-      author,
+      helper.formatToSentenceCase(title).trim(),
+      helper.formatToSentenceCase(author).trim(),
       formattedDate,
       Number(rating),
-      comment.trim(),
+      comment.charAt(0).toUpperCase() + comment.slice(1).toLowerCase().trim(),
       bookCover
     );
-    res.redirect("/books?sort=date");
+    res.status(200).json({ message: "Book added successfully." });
   } catch (error) {
-    res.send(error);
+    res
+      .status(500)
+      .json({ message: "An error occurred while adding the book." });
   }
 });
 
@@ -83,10 +101,10 @@ router.put("/book/:id", async (req, res) => {
     await bookController.updateBook(
       id,
       isbn,
-      title.trim(),
-      author,
+      helper.formatToSentenceCase(title).trim(),
+      helper.formatToSentenceCase(author).trim(),
       rating,
-      comment.trim(),
+      comment.charAt(0).toUpperCase() + comment.slice(1).toLowerCase().trim(),
       bookCover
     );
     res.render("book", {
@@ -94,10 +112,12 @@ router.put("/book/:id", async (req, res) => {
         Id: id,
         Isbn: isbn,
         Date: date,
-        Title: title,
-        Author: author,
+        Title: helper.formatToSentenceCase(title).trim(),
+        Author: helper.formatToSentenceCase(author).trim(),
         Rating: rating,
-        Comment: comment,
+        Comment:
+          comment.charAt(0).toUpperCase() +
+          comment.slice(1).toLowerCase().trim(),
         Image_Url: bookCover ? bookCover : imageUrl,
       },
     });

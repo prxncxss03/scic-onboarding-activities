@@ -3,6 +3,14 @@ function formatDate(dateString) {
   return new Date(dateString).toLocaleDateString('en-US', options);
 }
 
+function formatToSentenceCase(str) {
+  return str
+    .split(' ') 
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()) 
+    .join(' '); 
+}
+
 module.exports = {
-  formatDate
+  formatDate,
+  formatToSentenceCase,
 }

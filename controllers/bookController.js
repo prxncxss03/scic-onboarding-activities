@@ -17,6 +17,22 @@ async function getBooks(sortByValue = "date") {
   });
 }
 
+async function getBookByIsbn(isbn) {
+  return new Promise((resolve, reject) => {
+    connection.query(
+      "SELECT * FROM books WHERE Isbn = ?",
+      [isbn],
+      (err, rows) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(rows[0]);
+        }
+      }
+    );
+  });
+}
+
 async function getBookById(id) {
   return new Promise((resolve, reject) => {
     connection.query("SELECT * FROM books WHERE id = ?", [id], (err, rows) => {
@@ -89,4 +105,5 @@ module.exports = {
   deleteBook,
   getBookById,
   updateBook,
+  getBookByIsbn,
 };
