@@ -284,6 +284,18 @@ nav {
   .linkedin-logo {
     display: none;
   }
+
+  input {
+    padding: 1rem;
+  }
+
+  textarea {
+    padding: 1rem;
+  }
+
+  button {
+    padding: 1rem 1.5rem;
+  }
 }
 
 @media (min-width: 769px) {
@@ -305,7 +317,6 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100%;
 }
 
 .hero-name {
