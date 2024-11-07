@@ -42,9 +42,10 @@ CREATE TABLE IF NOT EXISTS books (
 );
 ```
 
-### Demo
+### 🛜 [Live Site](https://princess-book-notes.onrender.com)
 
-https://github.com/user-attachments/assets/35c212f5-611f-4015-8262-65744d65263c
+### Demo
+https://github.com/user-attachments/assets/aed228ae-95ff-4cdb-ad16-a84171800f18
 
 ### Credits
 
