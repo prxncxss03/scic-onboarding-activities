@@ -2,5 +2,11 @@
 
 ## Simple Bmi Calculator using Express Js
 
-https://github.com/user-attachments/assets/2fdc4192-440e-4bd2-a4b6-f165d3366366
+### 🛜 [Live Site](https://princess-express-bmi-calculator.onrender.com/)
+
+### Demo
+https://github.com/user-attachments/assets/22e1986f-e756-4dd5-b129-e663876919c8
+
+
+
 
